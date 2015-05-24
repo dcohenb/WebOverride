@@ -1,0 +1,95 @@
+.editOverride {
+	$menu-width: 80px;
+
+	.menu, .tab {
+		position: absolute;
+		top: $header-height;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.menu {
+		width: $menu-width;
+		background: $grey;
+		color: #ffffff;
+		.item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: $menu-width;
+			height: $menu-width;
+			transition: font-size 0.3s;
+			font-size: 0;
+			color: inherit;
+			i {
+				font-size: 20px;
+				margin-bottom: 5px;
+			}
+			&:hover, &.selected {
+				font-size: 14px;
+			}
+			&.selected {
+				cursor: default;
+				color: rgba(255, 255, 255, 0.5);
+			}
+			&.settings {
+				background-color: $blue;
+			}
+			&.html {
+				background-color: $orange;
+			}
+			&.css {
+				background-color: $green;
+			}
+			&.js {
+				background-color: $blue;
+			}
+		}
+	}
+
+	.tab {
+		left: $menu-width;
+		&.settings {
+			padding: 20px;
+			.urlQuery {
+				display: flex;
+				> input {
+					flex: 1;
+				}
+				.remove-input-row {
+					background: $grey;
+					color: $dark-text;
+					&:hover {
+						background-color: $light-blue;
+					}
+				}
+			}
+
+			.libs {
+				.head {
+					display: flex;
+					h2 {
+						margin-right: 10px;
+					}
+				}
+				.list {
+					display: flex;
+					align-items: center;
+					div {
+						flex: 1;
+					}
+					&:hover {
+						background: rgba(0, 0, 0, 0.05);
+					}
+				}
+			}
+		}
+
+		.code-input {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

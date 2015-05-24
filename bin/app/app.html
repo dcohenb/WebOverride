@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <title>Web Override</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+
+    <script src="../lib/lodash/lodash.min.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../lib/ace-builds/src-min-noconflict/ace.js"></script>
+    <script src="../lib/angular-ui-ace/ui-ace.min.js"></script>
+    <script src="../lib/angular-hotkeys/build/hotkeys.min.js"></script>
+    <script src="../lib/angular-mass-autocomplete/massautocomplete.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../lib/angular-mass-autocomplete/massautocomplete.theme.css"/>
+
+    <script src="js/config.js"></script>
+    <script src="js/common/mixins.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/factories/configAPI.factory.js"></script>
+    <script src="js/factories/scripts.factory.js"></script>
+    <script src="js/factories/chrome.factory.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/views/About.js"></script>
+    <script src="js/controllers/views/AllOverrides.js"></script>
+    <script src="js/controllers/views/AddOverride.js"></script>
+    <script src="js/controllers/views/EditOverride.js"></script>
+    <script src="js/controllers/views/ImportExport.js"></script>
+
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ng-controller="MainCtrl">
+<div ui-view ng-class="[currentState]"></div>
+</body>
+</html>

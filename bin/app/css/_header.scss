@@ -1,0 +1,39 @@
+header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: $header-height;
+    width: 100%;
+    line-height: $header-height;
+    color: $light-text;
+    background: $dark-blue;
+    h1 {
+        margin: 0 10px;
+        flex: 1;
+        a {
+            color: $light-text;
+        }
+    }
+    button, a {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+        width: $header-height;
+        height: $header-height;
+        opacity: 0.8;
+        transition: opacity 0.2s, background 0.2s 0.1s;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+		color: #ffffff;
+		background: transparent;
+
+        &.highlight {
+            opacity: 1;
+        }
+        &:hover {
+            background-color: rgba(0,0,0,0.2);
+            opacity: 1;
+        }
+    }
+}

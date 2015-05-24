@@ -1,0 +1,39 @@
+<header>
+    <h1>My Overrides</h1>
+    <a ui-sref="addOverride" title="Add Override"><i class="fa fa-plus-circle"></i></a>
+    <a ui-sref="importExport" title="Import/Export"><i class="fa fa-exchange"></i></a>
+    <a ui-sref="about" title="About"><i class="fa fa-info-circle"></i></a>
+    <button ng-if="!fullmode" type="button" ng-click="popout()"><i class="fa fa-external-link"></i></button>
+</header>
+<div ng-if="!scripts || _.size(scripts) === 0" class="no-scripts">
+    <h2>Seems like you still have no overrides</h2>
+    <a ui-sref="addOverride"><i class="fa fa-plus-circle"></i> Create your first override</a>
+</div>
+
+<table ng-if="_.size(scripts) !== 0" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Last update</td>
+        <td>Active</td>
+        <td>&nbsp;</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="(id, script) in scripts track by $index">
+        <td><a ui-sref="editOverride({id:id})">{{::script.title}}</a></td>
+        <td>{{::script.updatedAt | date:'short'}}</td>
+        <td><input type="checkbox" ng-model="script.active" ng-change="update(id, script)"/></td>
+        <td>
+            <a ui-sref="editOverride({id:id})" title="Edit override"><i class="fa fa-pencil"></i></a>
+            <a type="button" ng-click="removeOverride(id)" title="Remove override"><i class="fa fa-trash"></i></a>
+            <a ng-click="downloadBackup(script, id)" title="Export override"><i class="fa fa-download"></i></a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" class="add">
+            <a ui-sref="addOverride"><i class="fa fa-plus-circle"></i> Add a new override</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

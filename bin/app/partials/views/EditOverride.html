@@ -1,0 +1,99 @@
+<form name="form" ng-submit="submitHandler()">
+    <header>
+        <a ui-sref="allOverrides"><i class="fa fa-list"></i></a>
+
+        <h1>Edit Override</h1>
+        <button type="button" ng-click="removeOverride()"><i class="fa fa-trash"></i></button>
+        <button ng-hide="saving" type="submit" ng-disabled="!(form.$dirty && form.$valid)">
+            <i class="fa fa-floppy-o"></i>
+        </button>
+        <div ng-show="saving"><i class="fa fa-spinner fa-pulse"></i></div>
+        <button ng-if="!fullmode" type="button" ng-click="popout()"><i class="fa fa-external-link"></i></button>
+    </header>
+
+    <nav class="menu">
+        <button type="button"
+                ng-repeat="item in tabsMenu"
+                class="item {{::item.id}}"
+                ng-click="$parent.tab = item.id"
+                ng-class="{selected: item.id == $parent.tab}">
+            <i ng-class="item.icon"></i>
+            {{::item.title}}
+        </button>
+    </nav>
+
+    <div class="tab settings" ng-if="!tab || tab == 'settings'">
+        <fieldset>
+            <label for="title">Title</label>
+            <input id="title" type="text" ng-model="data.title" placeholder="Give a name for your override" required/>
+        </fieldset>
+
+        <fieldset>
+            <label for="urlQuery">
+                URL RegExp
+                <a ng-if="!fullmode" ng-click="resetURL()" title="Reset to current tab url">
+                    <i class="fa fa-undo"></i>
+                </a>
+            </label>
+
+            <div id="urlQuery" class="urlQuery" ng-repeat="i in data.urlQueries track by $index">
+                <input type="text" ng-model="data.urlQueries[$index]"
+                       placeholder="URL RegExp for the override to work on"
+                       required/>
+                <button type="button" class="remove-input-row fa fa-trash" ng-click="remove(data.urlQueries, $index)"
+                        ng-disabled="data.urlQueries.length === 1">
+                </button>
+            </div>
+            <button type="button" class="add-url" ng-click="data.urlQueries.push('')">
+                <i class="fa fa-plus-circle"></i> Add URL Query
+            </button>
+        </fieldset>
+
+        <fieldset>
+            <input id="active" type="checkbox" ng-model="data.active" ng-checked="data.active"/>
+            <label for="active">Override Active</label>
+        </fieldset>
+
+        <fieldset class="libs">
+            <div class="head">
+                <h2>Libraries</h2>
+
+                <div mass-autocomplete class="mass-ac">
+                    <input ng-model="ac_value"
+                           class="mass-ac-input"
+                           placeholder="Search Libs..."
+                           mass-autocomplete-item="ac_options"/>
+                </div>
+            </div>
+
+            <div class="list" ng-repeat="lib in data.libs track by $index">
+                <div title="{{lib.value}}">{{lib.label}}</div>
+                <button type="button" class="fa fa-trash" ng-click="remove(data.libs, $index)"></button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="tab" ng-if="tab == 'html'">
+        <div class="code-input" ui-ace="{
+            theme: config.editorTheme,
+            mode: 'html'
+        }" ng-model="data.htmlContent">
+        </div>
+    </div>
+
+    <div class="tab" ng-if="tab == 'css'">
+        <div class="code-input" ui-ace="{
+            theme: config.editorTheme,
+            mode: 'css'
+        }" ng-model="data.cssContent">
+        </div>
+    </div>
+
+    <div class="tab" ng-if="tab == 'js'">
+        <div class="code-input" ui-ace="{
+            theme: config.editorTheme,
+            mode: 'javascript'
+        }" ng-model="data.jsContent">
+        </div>
+    </div>
+</form>

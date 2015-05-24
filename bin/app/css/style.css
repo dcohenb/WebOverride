@@ -1,0 +1,259 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:200,400,700);
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+* {
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+img {
+  vertical-align: middle; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 1.3em; }
+
+a, a:link, a:visited {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none; }
+  a > .fa, a:link > .fa, a:visited > .fa {
+    margin-right: 7px; }
+
+a:hover, a:active {
+  color: inherit;
+  text-decoration: none; }
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px; }
+  button > .fa {
+    margin-right: 7px; }
+
+.fa:before {
+  font-size: 1.5em; }
+
+table {
+  width: 100%; }
+  table tr td {
+    height: 40px;
+    border-bottom: 1px #eaedf2 solid;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 250px;
+    text-overflow: ellipsis; }
+    table tr td:first-of-type {
+      padding-left: 10px; }
+  table thead {
+    font-weight: bold; }
+    table thead tr {
+      background: #1ebaa5;
+      color: white; }
+  table tbody tr {
+    transition: background 0.3s; }
+    table tbody tr:hover {
+      background: #eaedf2; }
+    table tbody tr td .btn {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: no-repeat center center;
+      background-size: 20px;
+      border-radius: 2px;
+      opacity: 0.3;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s 0.1s; }
+      table tbody tr td .btn:hover {
+        opacity: 1;
+        background-color: #868f9a; }
+
+form input, form textarea, form button, form select, .form input, .form textarea, .form button, .form select {
+  outline: none; }
+form fieldset, .form fieldset {
+  margin-bottom: 10px; }
+form label, .form label {
+  display: block;
+  height: 30px;
+  line-height: 30px; }
+form input, form select, .form input, .form select {
+  background: #eaedf2;
+  color: #212429;
+  padding: 0 5px;
+  height: 30px;
+  line-height: 30px;
+  border: none; }
+  form input[type="text"], form select[type="text"], .form input[type="text"], .form select[type="text"] {
+    width: 100%; }
+  form input[type="checkbox"], form select[type="checkbox"], .form input[type="checkbox"], .form select[type="checkbox"] {
+    vertical-align: middle; }
+  form input[type="checkbox"] + label, form select[type="checkbox"] + label, .form input[type="checkbox"] + label, .form select[type="checkbox"] + label {
+    display: inline-block; }
+  form input.ng-invalid, form select.ng-invalid, .form input.ng-invalid, .form select.ng-invalid {
+    border: 1px solid #FF9D9D; }
+form button, .form button {
+  height: 30px;
+  min-width: 30px;
+  background-color: #868f9a;
+  color: white; }
+  form button:hover, .form button:hover {
+    background-color: #6c7581;
+    cursor: pointer; }
+  form button[disabled], .form button[disabled] {
+    opacity: 0.3;
+    pointer-events: none; }
+
+body {
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #323a45;
+  font-size: 14px;
+  min-width: 700px;
+  min-height: 400px; }
+  body header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    color: white;
+    background: #323a45; }
+    body header h1 {
+      margin: 0 10px;
+      flex: 1; }
+      body header h1 a {
+        color: white; }
+    body header button, body header a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      opacity: 0.8;
+      transition: opacity 0.2s, background 0.2s 0.1s;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      color: #ffffff;
+      background: transparent; }
+      body header button.highlight, body header a.highlight {
+        opacity: 1; }
+      body header button:hover, body header a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 1; }
+  body .mass-ac {
+    position: relative;
+    width: 100%; }
+    body .mass-ac .ac-container {
+      position: absolute !important;
+      top: 100% !important;
+      left: 0 !important;
+      width: auto !important; }
+      body .mass-ac .ac-container .ac-menu {
+        max-height: 144px;
+        overflow: auto; }
+  body .about .content {
+    padding: 0 10px; }
+  body .allOverrides .no-scripts {
+    text-align: center;
+    padding: 20px 0; }
+    body .allOverrides .no-scripts > * {
+      margin: 20px 0; }
+  body .allOverrides table tbody tr.external span {
+    opacity: 0.3; }
+  body .allOverrides table tbody tr td.add a {
+    display: flex;
+    align-content: center;
+    padding: 10px 0; }
+    body .allOverrides table tbody tr td.add a img {
+      height: 20px;
+      margin-right: 7px; }
+  body .allOverrides table tbody tr td.secondary {
+    color: #868f9a;
+    font-size: 12px; }
+  body .addOverride .content {
+    padding: 20px; }
+    body .addOverride .content .urlQuery {
+      display: flex; }
+      body .addOverride .content .urlQuery > input {
+        flex: 1; }
+      body .addOverride .content .urlQuery .remove-input-row {
+        background: #eaedf2;
+        color: #323a45; }
+        body .addOverride .content .urlQuery .remove-input-row:hover {
+          background-color: #868f9a; }
+  body .editOverride .menu, body .editOverride .tab {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  body .editOverride .menu {
+    width: 80px;
+    background: #eaedf2;
+    color: #ffffff; }
+    body .editOverride .menu .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 80px;
+      height: 80px;
+      transition: font-size 0.3s;
+      font-size: 0;
+      color: inherit; }
+      body .editOverride .menu .item i {
+        font-size: 20px;
+        margin-bottom: 5px; }
+      body .editOverride .menu .item:hover, body .editOverride .menu .item.selected {
+        font-size: 14px; }
+      body .editOverride .menu .item.selected {
+        cursor: default;
+        color: rgba(255, 255, 255, 0.5); }
+      body .editOverride .menu .item.settings {
+        background-color: #14b9d5; }
+      body .editOverride .menu .item.html {
+        background-color: #f37936; }
+      body .editOverride .menu .item.css {
+        background-color: #1ebaa5; }
+      body .editOverride .menu .item.js {
+        background-color: #14b9d5; }
+  body .editOverride .tab {
+    left: 80px; }
+    body .editOverride .tab.settings {
+      padding: 20px; }
+      body .editOverride .tab.settings .urlQuery {
+        display: flex; }
+        body .editOverride .tab.settings .urlQuery > input {
+          flex: 1; }
+        body .editOverride .tab.settings .urlQuery .remove-input-row {
+          background: #eaedf2;
+          color: #323a45; }
+          body .editOverride .tab.settings .urlQuery .remove-input-row:hover {
+            background-color: #868f9a; }
+      body .editOverride .tab.settings .libs .head {
+        display: flex; }
+        body .editOverride .tab.settings .libs .head h2 {
+          margin-right: 10px; }
+      body .editOverride .tab.settings .libs .list {
+        display: flex;
+        align-items: center; }
+        body .editOverride .tab.settings .libs .list div {
+          flex: 1; }
+        body .editOverride .tab.settings .libs .list:hover {
+          background: rgba(0, 0, 0, 0.05); }
+    body .editOverride .tab .code-input {
+      width: 100%;
+      height: 100%; }
+  body .importExport .content {
+    padding: 10px; }

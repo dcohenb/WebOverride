@@ -1,0 +1,30 @@
+<header>
+    <a ui-sref="allOverrides"><i class="fa fa-list"></i></a>
+
+    <h1>About</h1>
+    <button ng-if="!fullmode" type="button" ng-click="popout()"><i class="fa fa-external-link"></i></button>
+</header>
+<div class="content">
+    <h2>Web Override <small>v{{::version}}</small></h2>
+
+    <p>
+        Visit us at <a href="http://weboverride.com" target="_blank">WebOverride.com</a>
+    </p>
+
+    <p>
+        Created by <a href="http://dcb.co.il" target="_blank">Daniel Cohen</a>
+    </p>
+
+    <p>&copy; {{::year}}, All rights reserved.</p>
+
+    <p>&nbsp;</p>
+
+    <h2>Settings</h2>
+
+    <form>
+        <label>Editor Theme</label>
+        <select ng-model="config.editorTheme"
+                ng-options="theme.value as theme.name for theme in config.editorThemes"
+                ng-change="updateConfig('editorTheme', config.editorTheme)"></select>
+    </form>
+</div>

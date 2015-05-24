@@ -1,0 +1,15 @@
+.mass-ac {
+	position: relative;
+	width: 100%;
+
+	.ac-container {
+		position: absolute !important;
+		top: 100% !important;;
+		left: 0 !important;;
+		width: auto !important;
+		.ac-menu {
+			max-height: 144px;
+			overflow: auto;
+		}
+	}
+}

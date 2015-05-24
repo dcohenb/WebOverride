@@ -1,0 +1,38 @@
+.allOverrides {
+	.no-scripts {
+		text-align: center;
+		padding: 20px 0;
+		> * {
+			margin: 20px 0;
+		}
+	}
+
+    table {
+        tbody {
+            tr {
+                &.external {
+                    span {
+                        opacity: 0.3;
+                    }
+                }
+                td {
+                    &.add {
+                        a {
+                            display: flex;
+                            align-content: center;
+                            padding: 10px 0;
+                            img {
+                                height: 20px;
+                                margin-right: 7px;
+                            }
+                        }
+                    }
+                    &.secondary {
+                        color: $light-blue;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

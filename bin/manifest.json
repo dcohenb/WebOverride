@@ -1,0 +1,40 @@
+{
+  "name": "Web Override",
+  "short_name": "webo",
+  "description": "Override websites with your own code snippets",
+  "version": "1.0.0",
+  "homepage_url": "http://weboverride.com",
+  "permissions": [
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "optional_permissions": [
+    "notifications"
+  ],
+  "icons": {
+    "16": "icon/16.png",
+    "48": "icon/48.png",
+    "128": "icon/128.png"
+  },
+  "browser_action": {
+    "default_title": "See my overrides",
+    "default_icon": "icon/64.png",
+    "default_popup": "app/app.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content_script/content_script.js"
+      ]
+    }
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

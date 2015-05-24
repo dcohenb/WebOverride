@@ -1,0 +1,36 @@
+var config = {};
+
+config.editorThemes = [
+    {name: 'Textmate', value: 'textmate'},
+    {name: 'Ambiance', value: 'ambiance'},
+    {name: 'Chaos', value: 'chaos'},
+    {name: 'Chrome', value: 'chrome'},
+    {name: 'Clouds', value: 'clouds'},
+    {name: 'Clouds Midnight', value: 'clouds_midnight'},
+    {name: 'Cobalt', value: 'cobalt'},
+    {name: 'Crimson Editor', value: 'crimson_editor'},
+    {name: 'Dawn', value: 'dawn'},
+    {name: 'Dreamweaver', value: 'dreamweaver'},
+    {name: 'Eclipse', value: 'eclipse'},
+    {name: 'Github', value: 'github'},
+    {name: 'Idle Fingers', value: 'idle_fingers'},
+    {name: 'Katzenmilch', value: 'katzenmilch'},
+    {name: 'Kr Theme', value: 'kr_theme'},
+    {name: 'Kuroir', value: 'kuroir'},
+    {name: 'Merbivore', value: 'merbivore'},
+    {name: 'Merbivore Soft', value: 'merbivore_soft'},
+    {name: 'Mono Industrial', value: 'mono_industrial'},
+    {name: 'Monokai', value: 'monokai'},
+    {name: 'Pastel On Dark', value: 'pastel_on_dark'},
+    {name: 'Solarized Dark', value: 'solarized_dark'},
+    {name: 'Solarized Light', value: 'solarized_light'},
+    {name: 'Terminal', value: 'terminal'},
+    {name: 'Tomorrow', value: 'tomorrow'},
+    {name: 'Tomorrow Night', value: 'tomorrow_night'},
+    {name: 'Tomorrow Night Blue', value: 'tomorrow_night_blue'},
+    {name: 'Tomorrow Night Bright', value: 'tomorrow_night_bright'},
+    {name: 'Tomorrow Night Eighties', value: 'tomorrow_night_eighties'},
+    {name: 'Twilight', value: 'twilight'},
+    {name: 'Vibrant Ink', value: 'vibrant_ink'}
+];
+config.editorTheme = config.editorThemes[0].value;

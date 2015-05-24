@@ -1,0 +1,41 @@
+<form name="form" ng-submit="submitHandler()">
+    <header>
+        <a ui-sref="allOverrides"><i class="fa fa-list"></i></a>
+
+        <h1>Add Override</h1>
+        <button ng-if="!fullmode" type="button" ng-click="popout()"><i class="fa fa-external-link"></i></button>
+    </header>
+
+    <div class="content">
+        <fieldset>
+            <label for="title">Title</label>
+            <input id="title" type="text" ng-model="data.title" placeholder="Give a name for your override" required/>
+        </fieldset>
+
+        <fieldset>
+            <label for="urlQuery">
+                URL RegExp
+                <a ng-if="!fullmode" ng-click="resetURL()" title="Reset to current tab url">
+                    <i class="fa fa-undo"></i>
+                </a>
+            </label>
+
+            <div id="urlQuery" class="urlQuery" ng-repeat="i in data.urlQueries track by $index">
+                <input type="text" ng-model="data.urlQueries[$index]"
+                       placeholder="URL RegExp for the override to work on" required/>
+                <button type="button" class="remove-input-row" ng-click="remove(data.urlQueries, $index)"
+                        ng-disabled="data.urlQueries.length === 1">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <button type="button" class="add-url" ng-click="data.urlQueries.push('')">
+                <i class="fa fa-plus-circle"></i> Add URL Query
+            </button>
+        </fieldset>
+
+        <button type="submit" ng-disabled="form.$invalid || form.$pristine">
+            <i class="fa fa-floppy-o"></i>
+            Save and continue
+        </button>
+    </div>
+</form>

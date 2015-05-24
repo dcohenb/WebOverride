@@ -1,0 +1,19 @@
+.addOverride {
+	.content {
+		padding: 20px;
+
+		.urlQuery {
+			display: flex;
+			> input {
+				flex: 1;
+			}
+			.remove-input-row {
+				background: $grey;
+				color: $dark-text;
+				&:hover {
+					background-color: $light-blue;
+				}
+			}
+		}
+	}
+}
