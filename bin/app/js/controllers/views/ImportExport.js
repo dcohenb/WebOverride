@@ -40,20 +40,25 @@ angular.module('app')
                 if (_.size(newOverrides) === 0) return alert('Backup file has no valid overrides in it');
 
                 scripts.getAll().then(function (overrides) {
-                    var exsistingOverrides = _.compact(_.map(newOverrides, function (a, id) {
-                        return _.result(overrides[id], 'title');
-                    }));
+                    // Skip user verification if there are no scripts
+                    if (_.size(overrides) > 0) {
+                        var existingOverrides = _.compact(_.map(newOverrides, function (a, id) {
+                            return _.result(overrides[id], 'title');
+                        }));
 
-                    if (exsistingOverrides.length > 0) {
-                        var message = ['The following scripts will be overridden:', exsistingOverrides.join('\n'), 'continue?'].join('\n\n');
-                        if (!confirm(message))
-                            return;
+                        // Notify the user about existing scripts that will be replaced
+                        if (existingOverrides.length > 0) {
+                            var message = ['The following scripts will be overridden:', existingOverrides.join('\n'), 'continue?'].join('\n\n');
+                            if (!confirm(message)) return;
+                        }
                     }
 
+                    // Import the scripts
                     _.each(newOverrides, function (override, id) {
                         scripts.set(id, override);
                     });
 
+                    // Go back to the main view
                     $state.go('allOverrides');
                 });
             };
