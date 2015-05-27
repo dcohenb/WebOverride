@@ -2,7 +2,7 @@
   "name": "Web Override",
   "short_name": "webo",
   "description": "Override websites with your own code snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage_url": "http://weboverride.com",
   "permissions": [
     "storage",
