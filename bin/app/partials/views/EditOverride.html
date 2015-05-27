@@ -1,10 +1,11 @@
-<form name="form" ng-submit="submitHandler()">
+<form name="form">
     <header>
         <a ui-sref="allOverrides"><i class="fa fa-list"></i></a>
 
         <h1>Edit Override</h1>
         <button type="button" ng-click="removeOverride()"><i class="fa fa-trash"></i></button>
-        <button ng-hide="saving" type="submit" ng-disabled="!(form.$dirty && form.$valid)">
+        <button ng-hide="saving" type="button" ng-disabled="!(form.$dirty && form.$valid)"
+                ng-click="submitHandler()">
             <i class="fa fa-floppy-o"></i>
         </button>
         <div ng-show="saving"><i class="fa fa-spinner fa-pulse"></i></div>
