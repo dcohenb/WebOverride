@@ -9,7 +9,7 @@ angular.module('app')
     .controller('ImportExportCtrl', ['$scope', '$state', 'scripts',
         function ($scope, $state, scripts) {
 
-            $scope.export = function () {
+            $scope.exportScripts = function () {
                 var filename = 'web_override_backup_(' + new Date().toISOString() + ').json';
                 scripts.getAll().then(function (overrides) {
                     var contents = JSON.stringify(overrides || []);
