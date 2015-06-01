@@ -24,16 +24,15 @@
     <script src="js/factories/configAPI.factory.js"></script>
     <script src="js/factories/scripts.factory.js"></script>
     <script src="js/factories/chrome.factory.js"></script>
-    <script src="js/controllers/MainCtrl.js"></script>
-    <script src="js/controllers/views/About.js"></script>
-    <script src="js/controllers/views/AllOverrides.js"></script>
-    <script src="js/controllers/views/AddOverride.js"></script>
-    <script src="js/controllers/views/EditOverride.js"></script>
-    <script src="js/controllers/views/ImportExport.js"></script>
+    <script src="js/views/About.js"></script>
+    <script src="js/views/AllOverrides.js"></script>
+    <script src="js/views/AddOverride.js"></script>
+    <script src="js/views/EditOverride.js"></script>
+    <script src="js/views/ImportExport.js"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body ng-controller="MainCtrl">
+<body>
 <div ui-view ng-class="[currentState]"></div>
 </body>
 </html>

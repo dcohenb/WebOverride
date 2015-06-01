@@ -20,8 +20,12 @@
   },
   "browser_action": {
     "default_title": "See my overrides",
-    "default_icon": "icon/64.png",
-    "default_popup": "app/app.html"
+    "default_icon": "icon/64.png"
+  },
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ]
   },
   "content_scripts": [
     {

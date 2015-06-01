@@ -3,7 +3,6 @@
     <a ui-sref="addOverride" title="Add Override"><i class="fa fa-plus-circle"></i></a>
     <a ui-sref="importExport" title="Import/Export"><i class="fa fa-exchange"></i></a>
     <a ui-sref="about" title="About"><i class="fa fa-info-circle"></i></a>
-    <button ng-if="!fullmode" type="button" ng-click="popout()"><i class="fa fa-external-link"></i></button>
 </header>
 <div ng-if="!scripts || _.size(scripts) === 0" class="no-scripts">
     <h2>Seems like you still have no overrides</h2>
