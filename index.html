@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -8,82 +8,124 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <title>Weboverride by dcohenb</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="inner">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/lllllobkincmdnjfkbknjacacmnlajll">
+    <script type="text/javascript">
+        function installClickHandler() {
+            ga('send', 'event', 'install', 'clicked');
+            chrome.webstore.install('https://chrome.google.com/webstore/detail/lllllobkincmdnjfkbknjacacmnlajll', function() {
+                ga('send', 'event', 'install', 'success');
+            }, function(e) {
+                ga('send', 'event', 'install', 'failed', e);
+            });
+        }
+        if (chrome.app.isInstalled) {
+            ga('send', 'event', 'app isInstalled');
+            document.getElementById('install-button').style.display = 'none';
+        }
+    </script>
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)},i[r].l = 1 * new Date();a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m)})
+        (window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-16944395-14', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+<header>
+    <div class="inner">
         <h1>Weboverride</h1>
+
         <h2>Chrome extension that let&#39;s you customize the web!</h2>
-        <a href="https://github.com/dcohenb/WebOverride" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+        <a href="https://github.com/dcohenb/WebOverride" class="button">
+            <small>View project on</small>
+            GitHub</a>
+    </div>
+</header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
+<div id="content-wrapper">
+    <div class="inner clearfix">
         <section id="main-content">
-          <h1>
-<a id="weboverride" class="anchor" href="#weboverride" aria-hidden="true"><span class="octicon octicon-link"></span></a>WebOverride</h1>
+            <h1>
+                <a id="weboverride" class="anchor" href="#weboverride" aria-hidden="true"><span
+                        class="octicon octicon-link"></span></a>WebOverride</h1>
 
-<p>WebOverride let's you inject code snippets into any website allowing you to customize it to fit your needs</p>
+            <p>WebOverride let's you inject code snippets into any website allowing you to customize it to fit your
+                needs</p>
 
-<ul>
-<li>Automatic login</li>
-<li>hide annoying content</li>
-<li>create custom shortcuts and so much more...</li>
-</ul>
+            <ul>
+                <li>Automatic login</li>
+                <li>hide annoying content</li>
+                <li>create custom shortcuts and so much more...</li>
+            </ul>
 
-<h1>
-<a id="what-does-it-do" class="anchor" href="#what-does-it-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>What does it do?</h1>
+            <h1>
+                <a id="what-does-it-do" class="anchor" href="#what-does-it-do" aria-hidden="true"><span
+                        class="octicon octicon-link"></span></a>What does it do?</h1>
 
-<p>Using WebOverride you can inject HTML, CSS and JavaScript into any page in the web.
-You can also import any library you might need from cdnjs.com</p>
+            <p>Using WebOverride you can inject HTML, CSS and JavaScript into any page in the web.
+                You can also import any library you might need from cdnjs.com</p>
 
-<h1>
-<a id="chrome-store" class="anchor" href="#chrome-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chrome Store</h1>
+            <h1>
+                <a id="chrome-store" class="anchor" href="#chrome-store" aria-hidden="true"><span
+                        class="octicon octicon-link"></span></a>Chrome Store</h1>
 
-<p>You can download the extension from the chrome store and get updated automatically when updates come out.
-<a href="https://chrome.google.com/webstore/detail/web-override/lllllobkincmdnjfkbknjacacmnlajll">https://chrome.google.com/webstore/detail/web-override/lllllobkincmdnjfkbknjacacmnlajll</a></p>
+            <p>You can download the extension from the chrome store and get updated automatically when updates come out.
+                <a href="https://chrome.google.com/webstore/detail/web-override/lllllobkincmdnjfkbknjacacmnlajll">https://chrome.google.com/webstore/detail/web-override/lllllobkincmdnjfkbknjacacmnlajll</a>
+            </p>
 
-<h1>
-<a id="setup-and-run-locally" class="anchor" href="#setup-and-run-locally" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup and run locally</h1>
+            <h1>
+                <a id="setup-and-run-locally" class="anchor" href="#setup-and-run-locally" aria-hidden="true"><span
+                        class="octicon octicon-link"></span></a>Setup and run locally</h1>
 
-<ul>
-<li>Clone the project</li>
-<li>Run <code>bower i</code> the get the components</li>
-<li>Open Chrome in <code>chrome://extensions/</code>
-</li>
-<li>Check <code>Developer Mode</code>
-</li>
-<li>Click <code>Load unpacked extension</code>
-</li>
-<li>Select the <code>bin</code> folder</li>
-</ul>
+            <ul>
+                <li>Clone the project</li>
+                <li>Run <code>bower i</code> the get the components</li>
+                <li>Open Chrome in <code>chrome://extensions/</code>
+                </li>
+                <li>Check <code>Developer Mode</code>
+                </li>
+                <li>Click <code>Load unpacked extension</code>
+                </li>
+                <li>Select the <code>bin</code> folder</li>
+            </ul>
         </section>
 
         <aside id="sidebar">
-          <a href="https://github.com/dcohenb/WebOverride/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/dcohenb/WebOverride/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+            <a onclick="installClickHandler()" class="button chrome-store">
+                available in the chrome web store
+            </a>
+            <a href="https://github.com/dcohenb/WebOverride/zipball/master" class="button">
+                <small>Download</small>
+                .zip file
+            </a>
+            <a href="https://github.com/dcohenb/WebOverride/tarball/master" class="button">
+                <small>Download</small>
+                .tar.gz file
+            </a>
 
-          <p class="repo-owner"><a href="https://github.com/dcohenb/WebOverride"></a> is maintained by <a href="https://github.com/dcohenb">dcohenb</a>.</p>
+            <p class="repo-owner"><a href="https://github.com/dcohenb/WebOverride">Web Override</a> is maintained by <a
+                    href="https://github.com/dcohenb">dcohenb</a>.</p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+            <p>&copy; Copyrights 2015.</p>
+
+            <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme
+                by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
-      </div>
     </div>
+</div>
 
-  
-  </body>
+
+</body>
 </html>
