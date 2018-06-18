@@ -14,7 +14,6 @@ You can download the extension from the chrome store and get updated automatical
 
 # Setup and run locally
 - Clone the project
-- Run `bower i` the get the components
 - Open Chrome in `chrome://extensions/`
 - Check `Developer Mode`
 - Click `Load unpacked extension`
